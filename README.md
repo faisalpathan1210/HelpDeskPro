@@ -59,7 +59,10 @@ Java 17, Spring Boot, Spring Security, Spring Data JPA, Hibernate, MySQL, REST A
 ## Run locally
 
 1. Install Java 17 and MySQL, and create a database: `CREATE DATABASE helpdeskpro;`
-2. Copy `application-example.properties` to `application.properties` and set your MySQL password.
+2. Set your MySQL password as an environment variable named `DB_PASSWORD`.
+   - Windows (Command Prompt): `set DB_PASSWORD=your_password`
+   - Windows (PowerShell): `$env:DB_PASSWORD="your_password"`
+   - Mac/Linux: `export DB_PASSWORD=your_password`
 3. Run `./mvnw spring-boot:run` (or `mvnw.cmd spring-boot:run` on Windows).
 4. Open `http://localhost:8081`.
 5. Register a user. Roles SUPPORT and ADMIN are set in the database:
