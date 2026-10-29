@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --brand: #4f46e5;
+    --brand-dark: #4338ca;
+    --accent: #7c3aed;
+    --ink: #1e1b4b;
+    --soft: #eef2ff;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: #1f2937;
+}
+
+body.bg-light {
+    background: linear-gradient(180deg, #e0e7ff 0%, #f5f3ff 35%, #f8fafc 100%) fixed !important;
+    min-height: 100vh;
+}
+
+a { color: var(--brand); text-decoration: none; font-weight: 500; }
+a:hover { color: var(--brand-dark); text-decoration: underline; }
+
+/* Navbar */
+.navbar.bg-dark {
+    background: linear-gradient(135deg, var(--brand), var(--accent)) !important;
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.3);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+.navbar-brand { font-weight: 700; letter-spacing: 0.3px; font-size: 1.3rem; }
+.navbar .btn-outline-light { border-radius: 999px; padding: 0.25rem 1rem; }
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(30, 27, 75, 0.08);
+    animation: rise 0.35s ease both;
+}
+.card-title { font-weight: 700; color: var(--ink); }
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dashboard stat cards */
+#dash .card { border-top: 5px solid var(--brand); transition: transform 0.2s ease; }
+#dash .card:hover { transform: translateY(-3px); }
+#dash .fs-3 { font-size: 2rem !important; color: var(--ink); }
+#dash .col-md-3:nth-child(2) .card { border-top-color: #ef4444; }
+#dash .col-md-3:nth-child(3) .card { border-top-color: #f59e0b; }
+#dash .col-md-3:nth-child(4) .card { border-top-color: #10b981; }
+#dash .text-muted { text-transform: uppercase; letter-spacing: 1px; font-size: 0.72rem; }
+
+/* Buttons */
+.btn { border-radius: 10px; font-weight: 600; padding: 0.5rem 1.1rem; transition: all 0.15s ease; }
+.btn-sm { padding: 0.3rem 0.8rem; }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+    --bs-btn-bg: var(--brand);
+    --bs-btn-border-color: var(--brand);
+    --bs-btn-hover-bg: var(--brand-dark);
+    --bs-btn-hover-border-color: var(--brand-dark);
+    --bs-btn-active-bg: #3730a3;
+    --bs-btn-active-border-color: #3730a3;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Form fields */
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 1px solid #d6d3f5;
+    padding: 0.6rem 0.9rem;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--brand);
+    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.18);
+}
+
+/* Table */
+.table {
+    --bs-table-striped-bg: #f5f3ff;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(30, 27, 75, 0.08);
+    overflow: hidden;
+}
+.table thead th {
+    background: var(--ink);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    padding: 0.9rem 0.75rem;
+    border: none;
+}
+.table > tbody > tr > * { padding: 0.85rem 0.75rem; vertical-align: middle; border-color: #eceafd; }
+.table > tbody > tr:hover > * { --bs-table-bg-state: var(--soft); }
+
+/* Badges */
+.badge {
+    border-radius: 999px;
+    padding: 0.4em 0.8em;
+    font-size: 0.68rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+/* Alerts and tabs */
+.alert { border: none; border-radius: 12px; }
+.nav-tabs { border-bottom: 2px solid #e5e7eb; }
+.nav-tabs .nav-link { border: none; color: #6b7280; font-weight: 600; padding: 0.6rem 1.2rem; }
+.nav-tabs .nav-link.active {
+    color: var(--brand);
+    background: transparent;
+    border-bottom: 3px solid var(--brand);
+}
+
+/* Login page */
+.login-page .container {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 24px 60px rgba(79, 70, 229, 0.18);
+    padding: 2rem 2rem 2.2rem;
+    margin-top: 9vh;
+    animation: rise 0.4s ease both;
+}
+.login-page h2 {
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--brand), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Ticket detail page */
+#ticket .card-body { padding: 1.6rem; }
+#tTitle { font-weight: 700; color: var(--ink); }
+#ticket small.text-muted { text-transform: uppercase; letter-spacing: 1px; font-size: 0.68rem; }
+#ticket .col-6 > div { font-weight: 600; margin-top: 2px; }
+#comments .card { border-left: 4px solid #818cf8; box-shadow: 0 3px 12px rgba(30, 27, 75, 0.06); }
+.list-group-item { border-color: #eceafd; padding: 0.8rem 1rem; }
+#history .list-group-item { border-left: 3px solid var(--brand); }
+h5 { font-weight: 700; color: var(--ink); }
